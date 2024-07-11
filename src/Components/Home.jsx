@@ -38,6 +38,22 @@ function Home() {
           backgroundImage="/images/model-x.jpg"
          
          />
+         <Section 
+          title="Solar Panels"
+          description="Schedule a Virtual Consultation"
+          lefttext="Custom order"
+          righttext="Exiting inventory"
+          backgroundImage="/images/solar-panel.jpg"
+         
+         />
+         <Section 
+          title="Solar Roof"
+          description="Produce Clean Energy From Your Roof"
+          lefttext="Custom order"
+          righttext="Exiting inventory"
+          backgroundImage="/images/solar-roof.jpg"
+         
+         />
       </Container>
     
   );
