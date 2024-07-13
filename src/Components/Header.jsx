@@ -1,8 +1,12 @@
-import React from 'react';
+import React  from  'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@mui/icons-material/Menu';
+import BurgerNavComponent from './Header/BurgerNav';
+
 
 function Header() {
+  const [OpenBurger , SetOpenBurger] = useState(false);
   return (
     <Container>
       <a>
@@ -18,9 +22,10 @@ function Header() {
       <RightMenu>
         <a href="#">shop</a>
         <a href="#">Tesla account</a>
-        <CustomMenu />
+        <CustomMenu  onClick={()=>SetOpenBurger(true)}/>
 
       </RightMenu>
+      <BurgerNavComponent  OpenBurger={OpenBurger} SetOpenBurger={SetOpenBurger} />
     </Container>
   )
 }
@@ -32,10 +37,12 @@ min-height:60px;
 position:fixed;
 display: flex;
 align-items:center;
+justify-content: space-between;
 padding: 0 20px;
 top: 0;
 right: 0;
 left: 0;
+z-index:1;
 
 `
 
@@ -52,6 +59,10 @@ flex: 1;
    padding: 0 10px;
    flex-wrap:nowrap;
    
+ }
+
+ @media(max-width: 768px){
+  display: none;
  }
 `
 
@@ -71,3 +82,6 @@ a{
 const CustomMenu=styled(MenuIcon)`
 cursor:pointer;
 `
+
+
+

@@ -1,25 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
-import MenuIcon from '@mui/icons-material/Menu';
+import { Fade } from 'react-awesome-reveal';
 
 
 
 function Section({title , description , lefttext , righttext , backgroundImage}) {
   return (
     <Wrap bgimg={backgroundImage}>
-     <ItemText>
-          <h1>{title}</h1>
-          <p>{description} </p>
-     </ItemText>
+     <Fade  direction="up">
+       <ItemText>
+           <h1>{title}</h1>
+           <p>{description} </p>
+       </ItemText>
+     </Fade>
     <Buttons>
-    <Buttongroup>
-          <LeftButton>
-          {lefttext}
-          </LeftButton>
-          <RightButton>
-            {righttext}
-          </RightButton>
-     </Buttongroup>
+    <Fade  direction="up">
+      <Buttongroup>
+           <LeftButton>
+           {lefttext}
+           </LeftButton>
+           <RightButton>
+             {righttext}
+           </RightButton>
+      </Buttongroup>
+      </Fade>
      <DownArrow src="/images/down-arrow.svg" />
     </Buttons>
     </Wrap>
